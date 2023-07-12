@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jquery.image-marker Demo</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../src/jquery.image-marker.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../src/jquery.image-marker.css">
+    <style type="text/css">
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+          padding: 0;
+          margin: 0;
+          background-color: #fafafa;
+          font-family: 'Roboto', sans-serif;
+          font-size: 14px;
+          color: #222;
+          font-weight: 300;
+      }
+      .page_content {
+          width: 960px;
+          margin: 50px auto;
+          position: relative;
+          overflow: auto; 
+          position: relative;
+      }
+      .toolbar {
+          min-height: 32px;
+          margin: 9px 0 9px 10px;
+          line-height: 32px;
+          font-size: 16px;
+          overflow: auto;
+      }
+      .toolbar_btn {
+          float: left;
+          padding: 0 10px;
+          line-height: 30px;
+          margin-right: 10px;
+          border-radius: 6px;
+          color: #444;
+          cursor: pointer;
+          background-repeat: no-repeat;
+      }
+      .btn_grey {
+          background-color: #DDD;
+          margin: 1px 10px 0 0;
+          height: 30px;
+      }
+      .btn_grey:hover {
+          color: #FFF;
+          background-color: #1986C4;
+          border: 0;
+      }
+      /* SCRATCH STYLING */
+      .scratch {
+        background-color: rgba(255,145,0,0.15);
+        border-color: #ff9100;
+      }
+      .image-marker__dot.scratch, .image-marker__line.scratch {
+        background-color: #ff9100;
+      }
+      /* DENT STYLING */
+      .dent {
+        background-color: rgba(125,189,59,0.15);
+        border-color: #7dbd3b;
+      }
+      .image-marker__dot.dent, .image-marker__line.dent {
+        background-color: #7dbd3b;
+      }
+
+      /* GLASS STYLING */
+      .glass {
+        background-color: rgba(43,76,111,0.15);
+        border-color: #2B4C6F;
+      }
+      .image-marker__dot.glass, .image-marker__line.glass {
+        background-color: #2B4C6F;
+      }
+
+      /* PAINT STYLING */
+      .paint {
+        background-color: rgba(166,55,63,0.15);
+        border-color: #A6373F;
+      }
+      .image-marker__dot.paint, .image-marker__line.paint {
+        background-color: #A6373F;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="jquery-script-menu">
+<div class="jquery-script-center">
+
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+    <div class="page_content">
+    <h1>jquery.image-marker Demo</h1>
+      <div class="cell">
+        <div class="toolbar">
+          <div class="toolbar_left">
+            <div class="toolbar_btn btn_grey" id="add_dent_marker">Dent</div>
+            <div class="toolbar_btn btn_grey" id="add_scratch_marker">Scratch</div>
+            <div class="toolbar_btn btn_grey" id="add_paint_marker">Paint Fault</div>
+            <div class="toolbar_btn btn_grey" id="add_glass_marker">Glass Fault</div>
+            <div class="toolbar_btn btn_grey" id="save">Save</div>
+          </div>
+        </div>
+        <div id="element"></div>
+      </div>
+    </div>
+    <script>
+      $(function() {
+        var img_src = '../../../img/sedanlayout.jpg';
+        var imageMarker = $("#element").imageMarker({src: img_src, drag_disabled: false});
+        if (!!window.localStorage.markers) {
+          JSON.parse(window.localStorage.markers).forEach(function(m) {
+            $(imageMarker).trigger('add_marker', m);
+          })
+        }
+        $('#add_dent_marker').click(function() {
+          $(imageMarker).trigger('add_marker', {
+            title: 'Dent',
+            className: 'dent'
+          });
+        });
+        $('#add_scratch_marker').click(function() {
+          $(imageMarker).trigger('add_marker', {
+            title: 'Scratch',
+            className: 'scratch'
+          });
+        });
+        $('#add_glass_marker').click(function() {
+          $(imageMarker).trigger('add_marker', {
+            title: 'Glass Fault',
+            className: 'glass'
+          });
+        });
+        $('#add_paint_marker').click(function() {
+          $(imageMarker).trigger('add_marker', {
+            title: 'Paint Fault',
+            className: 'paint'
+          });
+        });
+        $('#save').click(function() {
+          $(imageMarker).trigger('get_markers', function(data) {
+            alert (JSON.stringify(data));
+            window.localStorage.markers = JSON.stringify(data);
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>
