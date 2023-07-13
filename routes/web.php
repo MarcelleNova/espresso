@@ -55,8 +55,9 @@ Route::prefix('calls')->group(function() {
     Route::get("/zip-form",'App\Http\Controllers\calls\ZipController@createJob')->name('zip.create');
     //Route for unzip Button
     Route::post("/unzip",'App\Http\Controllers\calls\ZipController@unzip');
-
-    Route::post("/chunk-csv",'App\Http\Controllers\CallsController@chunk')->name('chunk-csv');
+    Route::get("/import",'App\Http\Controllers\calls\ZipController@create')->name('import');
+    Route::post("/store",'App\Http\Controllers\calls\ZipController@store')->name('store');
+    Route::post("/chunk",'App\Http\Controllers\calls\ZipController@chunk')->name('chunk');
     Route::get("/upload",'App\Http\Controllers\CallsController@upload')->name('import-calls'); 
 });
 
