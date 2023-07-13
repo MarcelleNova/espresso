@@ -75,16 +75,22 @@
 
                 </div>
                {{-- Break big zip into smaller csv files --}}
-                <form action="{{ url('calls/chunk-csv') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('calls/store') }}" method="POST" enctype="multipart/form-data">
                     @csrf         
                       
-                    <div class="row mb-5">
+                    <div class="row mb-5 form-group{{ $errors->has('file') ? ' has-error' : '' }}">
                         <span class="col-md-3 text-sm my-auto">Choose Big csv file to break into chunks</span>
-                        <div class="col-md-4 col-sm"><input type="file" name="mycsv" class="form-control form-control-sm" required>
+                        <div class="col-md-4 col-sm"><input id="file" type="file" name="file" class="form-control form-control-sm" required>
                         </div>
                 
+                        @if ($errors->has('file'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('file') }}</strong>
+                        </span>
+                        @endif
+
                         <div class="col-md-4">
-                            <button type="submit" class="btn btn-info">Chunk CSV</button>
+                            <button type="submit" class="btn btn-info" name="submit"><i class="fa fa-check"></i> Chunk CSV</button>
                         </div>
                 
                     </div>
