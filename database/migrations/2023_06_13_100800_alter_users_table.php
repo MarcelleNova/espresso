@@ -9,9 +9,9 @@ class AlterUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('rec_id');
-            $table->string('companyID');
-            $table->string('join_date')->unique();
+            $table->string('rec_id')->nullable();
+            $table->string('companyID')->nullable();
+            $table->string('join_date')->nullable();
             $table->string('status')->nullable();
             $table->string('role_name')->nullable();
             $table->string('avatar')->nullable();

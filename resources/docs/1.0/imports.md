@@ -15,7 +15,7 @@ The complete zip file get sent to "\\PLATDC\sftp_root\SCP Folder"
 This file includes all the the call data for the entire Platinum Life Group in excess of 250 000 records per day.
 We have to filter it out to get the 20 000 odd records we need.
 
-![image](/public/app/img/ImportFilters.png)
+![image](/app/img/ImportFilters.PNG)
 
 These are the BWAS-Group to filter for:
 

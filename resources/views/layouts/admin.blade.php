@@ -44,11 +44,14 @@ $reports = Auth::user()
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    {{-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> ///OLD --}}
     <!-- jQuery UI 1.11.4 -->
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>  ///OLD --}}
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-
+ 
 
 </head>
 
@@ -138,8 +141,12 @@ $reports = Auth::user()
     <script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 
+    
+<!-- Select2 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
 
-
+<!-- Select2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
     @stack('scripts')
 

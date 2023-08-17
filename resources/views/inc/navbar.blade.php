@@ -9,7 +9,7 @@
             <a href="{{ route('home') }}" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ url('docs')}}" class="nav-link">Docs</a>
+            <a href="{{ url('docs')}}" target="_blank" class="nav-link">Docs</a>
         </li>
     </ul>
 

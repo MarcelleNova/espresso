@@ -33,7 +33,7 @@
 					<!-- /.card-header -->
 					<div class="card-body">
 
-						<a href="{{ route('users.create') }}" class="btn btn-primary btn-xs">Add New User</a>
+						<a href="{{ route('admin.users.create') }}" class="btn btn-primary btn-xs">Add New User</a>
 
 						<table id="indextable" class="table table-bordered table-hover table-sm text-sm">
 							<thead>
@@ -53,7 +53,7 @@
 								@foreach($users as $u)
 								<tr>
 									<td>{{ $u->id }}</td>
-									{{-- <td>{{ $u->company->companyName }}</td> --}}
+									<td>{{ $u->company->companyName }}</td>
 									<td>{{ $u->name }}</td>
 									<td>{{ $u->email }}</td>
 									<td>{{ $u->mobile }}</td>
@@ -66,9 +66,9 @@
 										@endif
 										@endforeach
 									</td>
-									<td><a href="{{ route('users.edit',$u->id) }}" class="btn btn-info btn-xs">Edit</a> 
+									<td><a href="{{ route('admin.users.edit',$u->id) }}" class="btn btn-info btn-xs">Edit</a> 
 										<a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" class="btn btn-danger btn-xs">Delete</a>
-										<form action="{{route('users.destroy',$u->id) }}" method="post">
+										<form action="{{route('admin.users.destroy',$u->id) }}" method="post">
 											@method('DELETE')
 											<input type="hidden" name="_token" value="{{ csrf_token() }}" >
 										</form>

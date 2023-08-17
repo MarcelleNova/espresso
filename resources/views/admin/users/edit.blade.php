@@ -32,7 +32,7 @@
 					</div>
 					<!-- /.card-header -->
 					<div class="card-body">
-						<form method="post" action="{{ route('users.update', $user->id) }}">
+						<form method="post" action="{{ route('admin.users.update', $user->id) }}">
 							@method('PUT')
 							<input type="hidden" name="_token" value="{{ csrf_token() }}" >
 							<div class="form-group">
@@ -91,7 +91,7 @@
 								<div class="clearfix"></div>
 							</div>
 							@can('Super Admin')
-							<div class="form-group">
+							{{-- <div class="form-group">
 								<div class="row">
 									<label class="col-md-3">Reports</label>
 
@@ -113,7 +113,7 @@
 									</div>
 								</div>
 								<div class="clearfix"></div>
-							</div>
+							</div> --}}
 							@endcan
 
 						</div>

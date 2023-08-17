@@ -15,6 +15,282 @@
             data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
+
+        {{-- PHONES --}}
+
+        <li class="nav-header">PHONE MANAGEMENT</li>
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-cogs"></i>
+                <p>
+                    Movement
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+ 
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('calls.phones.index')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Phones</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('calls.phones.phone.indexTable')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Phones Master</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-compass"></i>
+                <p>
+                    Dialing Trackers
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('calls.report.range')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Call Report
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-link"></i>
+                <p>
+                    Call Matching
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('calls.calldata.create')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Full Day Call Import</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('calls.calldata.create.midday')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Midday Call Import</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('calls.callmatching.index')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Run Call Mathing
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </li> 
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-mobile"></i>
+                <p>
+                    CLI
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-ban"></i>
+                <p>
+                    Spam
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+        </li>
+        @can('Super User')
+        <li class="nav-header">SALES</li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-signal"></i>
+                <p>
+                    Sales Trackers (Billboard)
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('calls.zip.create')}}" class="nav-link">
+                        <i class="far fa-bell nav-icon"></i>
+                        <p>Billboard</p>
+                    </a>
+                </li>
+            </ul>
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-eye"></i>
+                <p>
+                    Sales Stats Focus
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-align-left"></i>
+                <p>
+                    Batch Stats
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-percent"></i>
+                <p>
+                    Current Sales view
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+        </li>
+        @endcan
+            {{-- HR --}}
+        @can('Super User')
+        <li class="nav-header">HUMAN RESOURCES</li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                    Employee Roll
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            {{-- <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('calls.zip.create')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Billboard</p>
+                    </a>
+                </li> 
+            </ul> --}}
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                    Leave Submissions
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-file"></i>
+                <p>
+                    Templates
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-upload"></i>
+                <p>
+                    Contract Upload
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+        </li>
+        @endcan
+        @can('Super User')
+              {{-- DATA CONTROL --}}
+              <li class="nav-header">DATA CONTROL</li>
+              <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-spinner"></i>
+                      <p>
+                        Lead Import
+                      </p>
+                      <i class="right fas fa-angle-left"></i>
+                  </a>
+                  {{-- <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                          <a href="{{ route('calls.zip.create')}}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Billboard</p>
+                          </a>
+                      </li>
+                  </ul> --}}
+                  <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-undo"></i>
+                      <p>
+                        Lead Export
+                      </p>
+                      <i class="right fas fa-angle-left"></i>
+                  </a>
+                  <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-adjust"></i>
+                      <p>
+                        Lead Allocation
+                      </p>
+                      <i class="right fas fa-angle-left"></i>
+                  </a>
+                  <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-inbox"></i>
+                      <p>
+                        Invoicing
+                      </p>
+                      <i class="right fas fa-angle-left"></i>
+                  </a>
+              </li>
+            @endcan
+            @can('Super User')
+            {{-- Finance --}}
+            <li class="nav-header">FINANCE</li>
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-recycle"></i>
+                    <p>
+                        Recons
+                    </p>
+                    <i class="right fas fa-angle-left"></i>
+                </a>
+                {{-- <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('calls.zip.create')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Billboard</p>
+                        </a>
+                    </li>
+                </ul>--}}
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-random"></i>
+                    <p>
+                        Invoices and Payment
+                    </p>
+                    <i class="right fas fa-angle-left"></i>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-check"></i>
+                    <p>
+                        Authorisation
+                    </p>
+                    <i class="right fas fa-angle-left"></i>
+                </a>
+         
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-heartbeat"></i>
+                    <p>
+                        Expense Analysis
+                    </p>
+                    <i class="right fas fa-angle-left"></i>
+                </a>
+               
+            </li>
+
+            @endcan
+            @can('Super User')
+        <li class="nav-header">CALL MANAGEMENT</li>
+
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-cog"></i>
@@ -25,676 +301,44 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('zip.create')}}" class="nav-link">
+                    <a href="{{ route('calls.zip.create')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Daily SAICOM</p>
                     </a>
                 </li>
-            
-
             </ul>
         </li>
 
-            @can('Prop Man')
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-phone"></i>
+                <p>
+                    Phones
+                </p>
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('rap') }}" class="nav-link">
-
-                        <p>
-                            <i class="nav-icon fas fa-chart-pie"></i>Rentals Dashboard
-
-                        </p>
+                    <a href="{{ route('calls.phones.index')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Movements</p>
                     </a>
                 </li>
-            @endcan
-            @can('Task Management')
-                <li class="nav-item has-treeview">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-pen-square"></i>
-                        <p>
-                            Task Management
-                        </p>
-
-                    </a>
-                    <ul class="nav nav-treeview">
-
-                        <li class="nav-item">
-                            <a href="{{ route('task-management.space.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Space</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{ route('task-management.folder.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Folder</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('task-management.list.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Lists</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{ route('task-management.task.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Task</p>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-            @endcan
-
-            @can('Prop Agent')
+            </ul>
+            <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('agentsDashboard') }}" class="nav-link">
-
-                        <p>
-                            <i class="nav-icon fas fa-home"></i>Rental Coordinators
-
-                        </p>
+                    <a href="{{ route('calls.saicom.index')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Saicom Table</p>
                     </a>
                 </li>
-            @endcan
+            </ul>
 
-            @can('Prop Man')
-                <li class="nav-item">
-                    <a href="{{ route('prop.properties.available') }}" class="nav-link">
+            
+        </li>
+        @endcan
 
-                        <p>
-                            <i class="nav-icon fas fa-building"></i>Available Properties
-
-                        </p>
-                    </a>
-                </li>
-            @endcan
-
-            @can('MRP')
-                <li class="nav-item">
-                    <a href="{{ route('reports.mrpWorkReport') }}" class="nav-link">
-
-                        <p>
-                            <i class="nav-icon fas fa-chart-line"></i>Live Workstation Monitor
-
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('mrp.productionorder.dashboard') }}" class="nav-link">
-
-                        <p>
-                            <i class="nav-icon fas fa-chart-pie"></i>Production Dashboard
-
-                        </p>
-                    </a>
-                </li>
-            @endcan
-            @can('Access Control')
-                <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link">
-
-                        <p>
-                            <i class="nav-icon fas fa-chart-pie"></i>Dashboard
-
-                        </p>
-                    </a>
-                </li>
-
-
-                <li class="nav-header">ACCESS CONTROL</li>
-
-                <li class="nav-item has-treeview">
-                    <a href="{{ asset('pages/calendar.html') }}" class="nav-link">
-                        <i class="nav-icon fas fa-thermometer-half"></i>
-                        <p>
-                            Temperature Scanning
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.rfidtags.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>RFID Tags</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-            @endcan
-
-            @can('Prop Man')
-
-
-                <li class="nav-header">PROPERTY MANAGEMENT</li>
-
-                <li class="nav-item has-treeview">
-                    <a href="" class="nav-link">
-                        <i class="fas fa-house-user"></i>
-                        <p>
-                            Task Lists
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('bpm.jobs.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>View Active</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('bpm.rap.processing') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Processing Dashboard</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    @can('BPM Admin')
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('bpm.jobs.all') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>View All</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    @endcan
-
-                    @can('BPM Admin')
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('bpm.jobs.indexAll') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>View All New</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                @endcan
-                </li>
-
-            @endcan
-
-            @can('ATL')
-                <li class="nav-item has-treeview">
-                    <a href="" class="nav-link">
-                        <i class="fas fa-building"></i>
-                        <p>
-                            ATL / MDF
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('prop.authority.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All Authority To Lease Forms</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('prop.disclosure.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All Disclosure Forms</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('prop.disclosure.createNew') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>New Disclosure Form</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                @can('Prop Maint')
-                    <li class="nav-item has-treeview">
-                        <a href="" class="nav-link">
-                            <i class="fas fa-house-user"></i>
-                            <p>
-                                Property Maintenance
-                            </p>
-                            <i class="right fas fa-angle-left"></i>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('prop.properties.list') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Property Details</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                @endcan
-            @endcan
-
-
-
-            @can('MRP')
-
-                @can('Partners')
-                    <li class="nav-header">BUSINESS PARTNERS</li>
-
-                    <li class="nav-item has-treeview">
-                        <a href="" class="nav-link">
-                            <i class="fas fa-calculator"></i>
-                            <p>
-                                Business Partners
-                            </p>
-                            <i class="right fas fa-angle-left"></i>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('prt.partner.create') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Create New</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('prt.partner.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All Partners</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>
-                @endcan
-
-                @can('Sales')
-                    <li class="nav-header">SALES</li>
-                    @can('Sales Quotes')
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-calculator"></i>
-                                <p>
-                                    Quotes
-                                </p>
-                                <i class="right fas fa-angle-left"></i>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Create New</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>All Quotes</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-                    @endcan
-
-                    @can('Sales Orders')
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-shopping-cart"></i>
-                                <p>
-                                    Sales Orders
-                                </p>
-                                <i class="right fas fa-angle-left"></i>
-                            </a>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('mrp.salesorder.create') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Create New</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('mrp.salesorder.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>All Sales Orders</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-                    @endcan
-                    @can('Delivery Notes')
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-truck"></i>
-                                <p>
-                                    Delivery Notes
-                                </p>
-                                <i class="right fas fa-angle-left"></i>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('mrp.deliverynote.create') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Create New</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('mrp.deliverynote.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>All Delivery Notes</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-                    @endcan
-                    @can('Sales Reports')
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-chart-bar"></i>
-                                <p>
-                                    Sales Reports
-                                </p>
-                                <i class="right fas fa-angle-left"></i>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Sales by Category</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Sales by Client</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Sales by Item</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </li>
-                    @endcan
-                @endcan
-                @can('Purchasing')
-                    <li class="nav-header">PURCHASING</li>
-                    @can('Purchase Orders')
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-cash-register"></i>
-                                <p>
-                                    Purchase Orders
-                                </p>
-                                <i class="right fas fa-angle-left"></i>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('mrp.purchaseorder.create') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Create New</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('mrp.purchaseorder.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>All Purchase Orders</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-                    @endcan
-
-                    @can('GRV')
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-people-carry"></i>
-                                <p>
-                                    Goods Receiving
-                                </p>
-                                <i class="right fas fa-angle-left"></i>
-                            </a>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('mrp.goodsreceived.create') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Create New</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('mrp.goodsreceived.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>All Goods Receipt Vouchers</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-                    @endcan
-
-                    @can('Purchase Reports')
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-chart-bar"></i>
-                                <p>
-                                    Purchasing Reports
-                                </p>
-                                <i class="right fas fa-angle-left"></i>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Purchases by Category</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Purchases by Item</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Purchases by Supplier</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </li>
-                    @endcan
-                @endcan
-
-                <li class="nav-header">MANUFACTURING</li>
-
-
-                <li class="nav-item has-treeview">
-                    <a href="" class="nav-link">
-                        <i class="fas fa-city"></i>
-                        <p>
-                            Production Orders
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('mrp.productionorder.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>View Active</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('mrp.productionorder.create') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create New</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                <li class="nav-item has-treeview">
-                    <a href="" class="nav-link">
-                        <i class="fas fa-boxes"></i>
-                        <p>
-                            Inventory
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('inv.item.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>View Items</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('inv.item.create') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create Item</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                <li class="nav-header">MRP Setup</li>
-
-
-                <li class="nav-item has-treeview">
-                    <a href="" class="nav-link">
-                        <i class="fas fa-warehouse"></i>
-                        <p>
-                            Warehouse
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('whs.warehouse.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>View All</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('whs.warehouse.create') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create New</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                <li class="nav-item has-treeview">
-                    <a href="" class="nav-link">
-                        <i class="fas fa-desktop"></i>
-                        <p>
-                            Workstations
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('mrp.workstation.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>View All</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('mrp.workstation.create') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create New</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-            @endcan
-
-            @role('Reporting')
-
-                @if ($reports != null)
-                    <li class="nav-header">REPORTING</li>
-
-                    @foreach ($reports as $cat => $report)
-                        <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-chart-line"></i>
-                                <p>
-                                    {{ $cat }}
-                                </p>
-                                <i class="right fas fa-angle-left"></i>
-                            </a>
-                            @foreach ($report as $r)
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ route($r->route) }}" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>{{ $r->name }}</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            @endforeach
-                        </li>
-                    @endforeach
-                @endif
-            @endrole
-
+        @can('Super User')
             @can('Company Administrator')
                 <li class="nav-header">ADMINISTRATION</li>
 
@@ -707,145 +351,63 @@
                         <i class="right fas fa-angle-left"></i>
                     </a>
                     <ul class="nav nav-treeview">
+                    
+                  
                         <li class="nav-item">
-                            <a href="{{ route('company.company.index') }}" class="nav-link">
+                            <a href="{{ route('admin.venues.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Company Name</p>
+                                <p>Venues</p>
                             </a>
-                        </li>
+                        </li> 
                         <li class="nav-item">
-                            <a href="{{ route('company.details.index') }}" class="nav-link">
+                            <a href="{{ route('admin.ventures.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Company Details</p>
+                                <p>Ventures</p>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('company.locations.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Locations</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.users.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Users</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.stationery.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Stationery</p>
-                            </a>
-                        </li>
-                        @can('BPM Administrator')
-                            <li class="nav-item">
-                                <a href="{{ route('bpm.blueprints.index') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Blueprints</p>
-                                </a>
-                            </li>
-                        @endcan
-                        <li class="nav-item">
-                            <a href="{{ route('admin.rfidtags.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>RFID Tags</p>
-                            </a>
-                        </li>
+                        </li> 
 
                     </ul>
                 </li>
 
-                @can('BPM Admin')
+
+
+                </li>
+          
+                @can('Super Admin')
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-sitemap"></i>
+                            <i class="nav-icon fas fa-cog"></i>
                             <p>
-                                Workflow Setup
+                                Configuration
                             </p>
                             <i class="right fas fa-angle-left"></i>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('bpm.blueprints.index') }}" class="nav-link">
+                                <a href="{{ route('admin.permissions.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Blueprints</p>
+                                    <p>Permissions</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.roles.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Roles</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.users.index') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Users</p>
+                                </a>
+                            </li> 
+         
+
                         </ul>
                     </li>
                 @endcan
-
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-laptop"></i>
-                        <p>
-                            Assets
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.assets.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Manage Assets</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.asset_categories.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Asset Categories</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.asset_categories.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Asset Maintenance</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                </li>
             @endcan
-            @role('Super Admin')
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-cog"></i>
-                        <p>
-                            Configuration
-                        </p>
-                        <i class="right fas fa-angle-left"></i>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.permissions.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Permissions</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.roles.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Roles</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.asset_types.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Asset Types</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.asset_types.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Maintenance Types</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-            @endrole
+            @endcan
             <li class="nav-header">ACTIONS</li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}"

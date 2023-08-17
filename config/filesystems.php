@@ -55,7 +55,26 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
+  
+        'network' => [
+            'driver' => 'ftp',
+            'host' => 'PLATDC',
+            'username' => 'nlespresso',
+            'password' => '!3spr3ss0P@$$',
+            'root' => '//platdc/SFTP_Root/SCP Folder/Nova Life/',
+            'port' => 21,
+            'ssl' => false,
+            'timeout' => 90,
+            'utf8' => false,
+            'passive' => true,
+        ],
 
+        'local2' => [
+            'driver' => 'local',
+            'root' => '//platdc/SFTP_Root/SCP Folder/Nova Life/',
+            'throw' => false,
+            'ssl' => true,
+        ],
     ],
 
     /*
