@@ -12,7 +12,7 @@
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right text-sm">
 					<li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-					<li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a></li>
+					<li class="breadcrumb-item"><a href="{{route('admin.users.index')}}">Users</a></li>
 					<li class="breadcrumb-item active">User Management</li>
 				</ol>
 			</div><!-- /.col -->
@@ -32,7 +32,7 @@
 					</div>
 					<!-- /.card-header -->
 					<div class="card-body">
-						<form method="post" action="{{ route('users.store') }}">
+						<form method="post" action="{{ route('admin.users.store') }}">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}" >
 						@if(count($companies))
 							<div class="form-group">

@@ -62,5 +62,6 @@
                 reserved.
             </footer>
         </div>
+        @stack('scripts')
     </body>
 

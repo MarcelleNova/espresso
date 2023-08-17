@@ -8,30 +8,12 @@ use App\Models\Calls\CallImports;
 class CallsController extends Controller
 {
 
-    // public function index()
-    // {
-    //     return view('calls.upload-file');
-    // }
-
-
-
-    public function chunk()   // Thhis was moved to Zip Controller
+    public function chunk()   // This was moved to Zip Controller
     {
       
         request()->validate([
          'file'=> 'required|mimes:csv,txt'
-            ]);
-
- 
-    //      foreach($parts as $index=>$part){
-    //         $storageDestinationPath= resource_path("pending-files/");
-       
-    //         if (!File::exists( $storageDestinationPath)) {
-    //             \File::makeDirectory($storageDestinationPath, 0755, true);
-    //         }
-    //          $filename = resource_path('pending-files/'.date('y-m-d-H-i-s').$index. '.csv');
-    //          file_put_contents($filename, $part);
-    //      }
+        ]);
          
 
         if(request()->has('mycsv')){
@@ -53,72 +35,21 @@ class CallsController extends Controller
                 $filename = resource_path('pending-files/'.date('y-m-d-H-i-s').$index. '.csv');
                 file_put_contents($filename, $part);
 
-                // $name = "/tmp{$key}.csv";
-                // $path = resource_path('temp');
-                // return $path . $name;
-                // file_put_contents($path . $name . $chunk);
+              
             }
 
-        // foreach ($data as $row) {
-        //     // dd($row);
-        //     if($row[5] == 'Yes') {
-        //         $callData = CallImports::create([
-        //             'startTime' => $row[0],
-        //             'groupName'=> $row[1],
-        //             'userID'=> $row[2],
-        //             'fromNumber' =>$row[3],
-        //             'dialedNumber' => $row[4],
-        //             'answered' => $row[5],
-        //             'answerTime' => $row[6],
-        //             'releaseTime' => $row[7],
-        //             'terminationCause' => $row[8],
-        //             'trackingID' => $row[9],
-        //             'callID' => $row[10],
-        //             'groupNumber' => $row[11]]);
-        //     } else {
-        //         // dd($row);
-        //         $callData = CallImports::create([
-        //             'startTime' => $row[0],
-        //             'groupName'=> $row[1],
-        //             'userID'=> $row[2],
-        //             'fromNumber' =>$row[3],
-        //             'dialedNumber' => $row[4],
-        //             'answered' => $row[5],
-        //             // 'answerTime' => $row[6],
-        //             'releaseTime' => $row[7],
-        //             'terminationCause' => $row[8],
-        //             'trackingID' => $row[9],
-        //             'callID' => $row[10],
-        //             'groupNumber' => $row[11]]);
-        //     }
-        // }
 
     } else {
         return back()
              ->with('warning','Please select a file.');
     }
-    // return request()->all();
+ 
     return 'Done';
     }
 
      public function store(Request $request) 
      {
  
-        //  $file = file($request->file->getRealPath());
-        //  $data = array_slice($file,1);
-        // //  $parts = (array_chunk($data, 1000));
-        //  foreach($parts as $index=>$part){
-        //     $storageDestinationPath= resource_path("pending-files/");
-       
-        //     if (!File::exists( $storageDestinationPath)) {
-        //         \File::makeDirectory($storageDestinationPath, 0755, true);
-        //     }
-        //      $filename = resource_path('pending-files/'.date('y-m-d-H-i-s').$index. '.csv');
-        //      file_put_contents($filename, $part);
-        //  }
-        //  session()->flash('status','Queued for importing');
-        //  return back();
-
         $path = resource_path('pending-files/*.csv');
         $g = glob($path);
 

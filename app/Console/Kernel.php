@@ -12,8 +12,15 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        // $schedule->command('app:daily-call-import')
+        //         ->dailyAt('02:00')
+        //         ->runInBackground();
+
+        // $schedule->command('app:midday-call-import')
+        //         ->dailyAt('12:15')
+        //         ->runInBackground();
     }
+    
 
     /**
      * Register the commands for the application.

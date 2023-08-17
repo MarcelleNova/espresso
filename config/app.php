@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
+use Yajra\DataTables\Facades\DataTables;
+use Yajra\DataTables\DataTablesServiceProvider;
 use Spatie\Permission\PermissionServiceProvider;
 
 return [
@@ -71,7 +73,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Africa/Johannesburg',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +171,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\CustomFacadesServiceProvider::class,
+        DataTablesServiceProvider::class,
    
     ])->toArray(),
 
@@ -185,6 +189,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Redis' => Illuminate\Support\Facades\Redis::class,
+        'DataTables' => DataTables::class,
+        'Bitrix' => App\Repositories\BitrixFacades::class,
     ])->toArray(),
 
 ];

@@ -51,6 +51,9 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\admin\Company', 'companyID');
     }
 
-
+    public function routeNotificationForMail($notification)
+    {
+        return $this->email;
+    }
 
 }

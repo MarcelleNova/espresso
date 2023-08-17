@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Providers;
+
+use App\Repositories\Bitrix;
+use Illuminate\Support\ServiceProvider;
+
+class CustomFacadesProvider extends ServiceProvider
+{
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+
+         app()->bind('bitrix', function(){  
+            return new Bitrix;
+        });
+
+   
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+}

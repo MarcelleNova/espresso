@@ -1,3 +1,4 @@
-- ## Get Started
+- ## NOVA Espresso
     - [Overview](/{{route}}/{{version}}/overview)
+    - [Admin](/{{route}}/{{version}}/admin)
     - [Imports](/{{route}}/{{version}}/imports)
